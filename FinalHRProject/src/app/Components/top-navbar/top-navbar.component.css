@@ -1,0 +1,17 @@
+.logout:hover{
+    background-color: #f20202;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1.5px;
+}
+.Pioneers{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #03c5cc;
+    letter-spacing: 1px;
+    text-decoration: none;
+    line-height: 1.2rem;
+    font-family:'Courier New', Courier, monospace;
+    font-style: italic;
+}

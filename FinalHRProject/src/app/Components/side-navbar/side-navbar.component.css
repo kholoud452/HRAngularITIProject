@@ -1,0 +1,25 @@
+ul li a{
+    text-decoration: none;
+    color: #fffbfb;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+ul li a:hover{
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+
+}
+.Dashboard{
+    margin-top: 20px;
+}
+ul li{
+    margin-bottom: 10px;
+}
