@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IGeneralSettingDTO } from '../Models/generalSettinsDTO';
+import { IGeneralSettingForUpdateDTO } from '../Models/generalSettingForUpdate';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,19 @@ export class GeneralSettingServiceService {
   private baseUrl = `https://localhost:7084/api`;
   constructor(private _HttpClient:HttpClient) { }
 
-  getAllGeneralSettings() : Observable<IGeneralSettingDTO[]> {
-    return this._HttpClient.get<IGeneralSettingDTO[]>(`${this.baseUrl}/GeneralSetting/GetGeneralSetting`);
+  getAllGeneralSettings() : Observable<IGeneralSettingForUpdateDTO[]> {
+    return this._HttpClient.get<IGeneralSettingForUpdateDTO[]>(`${this.baseUrl}/GeneralSetting`);
   }
   addGeneralSetting(generalSetting: IGeneralSettingDTO): Observable<IGeneralSettingDTO> {
-    return this._HttpClient.post<IGeneralSettingDTO>(`${this.baseUrl}/GeneralSetting/AddGeneralSetting`, generalSetting);
+    return this._HttpClient.post<IGeneralSettingDTO>(`${this.baseUrl}/GeneralSetting`, generalSetting);
   }
-  updateGeneralSetting(id: number,generalSetting: IGeneralSettingDTO): Observable<IGeneralSettingDTO> {
-    return this._HttpClient.put<IGeneralSettingDTO>(`${this.baseUrl}/GeneralSetting/UpdateGeneralSetting${id}`, generalSetting);
+  updateGeneralSetting(id: number,generalSetting: IGeneralSettingForUpdateDTO): Observable<IGeneralSettingForUpdateDTO> {
+    return this._HttpClient.put<IGeneralSettingForUpdateDTO>(`${this.baseUrl}/GeneralSetting/${id}`, generalSetting);
   }
-  deleteGeneralSetting(id: number): Observable<void> {
-    return this._HttpClient.delete<void>(`${this.baseUrl}/GeneralSetting/${id}`);
+  deleteGeneralSetting(id: number): Observable<any> {
+    return this._HttpClient.patch<any>(`${this.baseUrl}/GeneralSetting/${id}`,null);
   }
-  getGeneralSettingById(id: number): Observable<IGeneralSettingDTO> {
-    return this._HttpClient.get<IGeneralSettingDTO>(`${this.baseUrl}/GeneralSetting/GetGeneralSettingByID${id}`);
+  getGeneralSettingById(id: number): Observable<IGeneralSettingForUpdateDTO> {
+    return this._HttpClient.get<IGeneralSettingForUpdateDTO>(`${this.baseUrl}/GeneralSetting/${id}`);
   }
 }

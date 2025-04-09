@@ -1,4 +1,8 @@
 .editSidebar{
     height: 100vh;
+    position: fixed;
+    padding-top: 60px;
 }
+
+
 

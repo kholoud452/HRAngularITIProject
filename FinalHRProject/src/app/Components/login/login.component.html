@@ -3,34 +3,18 @@
       <img src="HRLogo-removebg-preview.png" alt="Logo" width="40" height="35">
       <span class="Pioneers">Pioneers</span>
   </a>
-    
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input 
-        type="email" 
-        id="email" 
-        formControlName="email" 
-        required
-        placeholder="Enter your email"
-        [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}">
-      
+    <div class="form-group"><label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" required placeholder="Enter your email" 
+      [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}">
       <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="invalid-feedback">
         <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
         <span *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</span>
       </div>
     </div>
-  
     <div class="form-group">
       <label for="password">Password</label>
-      <input 
-        type="password" 
-        id="password" 
-        formControlName="password" 
-        required
-        minlength="6"
-        placeholder="Enter your password"
-        [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}">
-      
+      <input  type="password"  id="password"  formControlName="password"  required minlength="6" placeholder="Enter your password"
+       [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}">
       <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
         <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
         <span *ngIf="loginForm.get('password')?.errors?.['pattern']">
@@ -38,7 +22,6 @@
         </span>
       </div>
     </div>
-  
     <div *ngIf="errorFromDB" class="text-danger mt-1 mb-3">{{ errorFromDB }}</div>
     <button type="submit" class="btn-login" [disabled]="loginForm.invalid || loginForm.pristine">Login</button>
   </form>
